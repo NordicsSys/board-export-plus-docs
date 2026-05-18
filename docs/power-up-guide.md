@@ -20,6 +20,52 @@ Board Export+ helps Trello users export board or card data into reusable files a
 
 The sticky footer shows the board name, export readiness, selected card/list/field counts, format, and active filters.
 
+## Visual Walkthrough
+
+Use these screenshots and the walkthrough GIF to understand the core Board Export+ flow before setting up your own exports.
+
+### Quick Video Guide
+
+![Board Export+ walkthrough](/videos/board-export-plus-walkthrough.gif)
+
+### Product Screenshots
+
+#### Export Setup
+
+![Board Export+ export setup](/screenshots/01-start-export-setup.png)
+
+Choose the export scope, format, filters, and confirm readiness before downloading.
+
+#### Field Selection
+
+![Choose Trello export fields](/screenshots/02-fields-column-selection.png)
+
+Select exactly which Trello fields appear in the export and control the column order.
+
+#### Export Preview
+
+![Preview Trello export](/screenshots/03-export-preview.png)
+
+Preview the export before downloading so reports are clean and client-ready.
+
+#### Scheduled Exports
+
+![Schedule recurring Trello exports](/screenshots/04-scheduled-exports.png)
+
+Schedule recurring exports with timezone-aware run times, retained downloads, and delivery options.
+
+#### Export History
+
+![Recent Trello export history](/screenshots/05-export-history.png)
+
+Access recent exports, copy client share links, and reuse previous settings.
+
+#### Presets
+
+![Board Export+ presets](/screenshots/06-presets.png)
+
+Apply starter presets or reuse saved configurations for consistent reporting.
+
 ## Start
 
 The Start tab is the main launch point for a one-time export.
