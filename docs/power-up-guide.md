@@ -125,19 +125,18 @@ Key schedule settings:
 
 - **Name** identifies the schedule in the history and management views.
 - **Cadence** controls daily or weekly recurrence.
-- **Time and time zone** control when the worker should run the schedule.
+- **Time and time zone** control when the schedule should run.
 - **Delivery targets** verify email recipients and webhook endpoints.
 - **Delivery methods** choose retained downloads, email delivery, webhook delivery, and public share options when available.
 
-Schedules require the background worker to be running. If a schedule is due but nothing is delivered, check the worker process and environment variables.
+If a scheduled export does not arrive, confirm that the schedule is active, the time zone is correct, and at least one verified delivery target is selected.
 
 ## Email Delivery
 
-Email delivery sends scheduled export notifications to verified recipients. It is intended for real team or client recipients after an administrator has configured SMTP for the Board Export+ deployment.
+Email delivery sends scheduled export notifications to verified recipients. It is intended for team members, clients, or other recipients who need to know when an export is ready.
 
 Requirements:
 
-- SMTP is configured by the workspace/app administrator.
 - The recipient email address is verified from the Schedule tab.
 - The schedule is active and includes Email as a delivery method.
 - Download retention or public share links are enabled when recipients need a download URL in the notification.
@@ -156,13 +155,7 @@ Recipients receive an export-ready notification with schedule details, file meta
 
 Webhook delivery posts export metadata to a verified endpoint owned by your team, client, automation platform, or integration service. It is designed for production systems that want to react when a scheduled export finishes.
 
-Requirements:
-
-- The receiver URL should use HTTPS in production.
-- The receiver must accept JSON `POST` requests.
-- The receiver must return a `2xx` status for successful verification and delivery.
-- The receiver should store or process `export.completed` payloads using `exportJobId` as an idempotency key.
-- If the payload includes `downloadUrl`, the receiver can fetch the generated file while the retained artifact or public share link is still available.
+Before a webhook can receive scheduled export notifications, it must be verified from the Schedule tab. Use a webhook URL from the system, automation tool, or integration service that should receive the export notification.
 
 Verification workflow:
 
@@ -172,41 +165,7 @@ Verification workflow:
 4. After verification, select the endpoint under **Webhook URL**.
 5. Enable Webhook delivery and save the schedule.
 
-During verification, Board Export+ sends:
-
-```json
-{
-  "event": "board-export-plus.webhook_challenge",
-  "challenge": "..."
-}
-```
-
-The endpoint must respond with the same challenge:
-
-```json
-{
-  "challenge": "..."
-}
-```
-
-When a scheduled export completes, Board Export+ posts:
-
-```json
-{
-  "event": "export.completed",
-  "exportJobId": "...",
-  "scheduleId": "...",
-  "scheduleName": "...",
-  "format": "json",
-  "scope": "board",
-  "sourceId": "...",
-  "fileName": "...",
-  "completedAt": "...",
-  "downloadUrl": "..."
-}
-```
-
-Treat webhook payloads as integration events. The receiving system should validate the event, handle duplicate `exportJobId` values safely, and return quickly with a success response.
+If verification fails, confirm that the webhook URL is correct and that the receiving service is ready to accept Board Export+ verification requests.
 
 ## History
 
@@ -214,13 +173,13 @@ The History tab shows recent export jobs when history saving is enabled.
 
 - Completed jobs can be downloaded while retained artifacts are available.
 - Failed jobs show status so you can adjust settings and rerun.
-- History depends on local/user settings and backend retention.
+- History availability depends on your saved settings and how long generated exports remain available.
 
 ## More And Advanced Settings
 
 The More menu contains lower-frequency sections such as Schedule, History, Advanced, and Help & docs.
 
-Advanced settings include request-level flags, branding defaults, and other controls that affect the current export request without changing Trello itself.
+Advanced settings include optional export behavior, branding defaults, and other controls that affect the current export without changing Trello itself.
 
 ## Power-Up Settings
 
@@ -254,30 +213,17 @@ Check the Start tab export readiness message. Most blockers require selecting ca
 Confirm:
 
 - The schedule is active.
-- `nextRunAt` is due.
-- The worker process is running.
-- Redis and Postgres are reachable.
-- Required worker environment variables are present.
+- The selected time and time zone are correct.
+- At least one delivery method is enabled.
+- The selected email recipient or webhook endpoint is verified.
 
 ### Webhook Verified But No Delivery Appears
 
-Verification is handled by the API. Actual scheduled delivery is handled by the worker. If verification succeeds but no `export.completed` event appears, check the worker.
+Confirm that Webhook delivery is enabled for the schedule and that the verified webhook endpoint is selected.
 
 ### Email Verification Does Not Arrive
 
-Check spam folders, recipient spelling, token expiry, and SMTP settings. In local development, confirm MailDev is running and reachable.
-
-### Local Delivery Testing
-
-For local development, MailDev can be used as a test inbox for email delivery.
-
-Webhook delivery can be tested with a local receiver, webhook.site with a custom response, Pipedream, or another endpoint that can echo the verification challenge. Public webhook testing tools must be configured to return:
-
-```json
-{
-  "challenge": "the incoming challenge value"
-}
-```
+Check the recipient spelling and spam folder, then send a new verification email if needed.
 
 ## Privacy And Stored Data
 
