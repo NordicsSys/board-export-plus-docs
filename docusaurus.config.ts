@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: process.env.DOCS_SITE_URL ?? 'https://docs.boardexportplus.example',
+  url: process.env.DOCS_SITE_URL ?? 'https://board-export.it-pal.net',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -52,16 +52,15 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/board-export-logo.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Board Export+ Docs',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Board Export+ Logo',
+        src: 'img/board-export-logo.png',
       },
       items: [
         {
@@ -71,8 +70,8 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          to: '/docs/deployment',
-          label: 'Publish safely',
+          to: '/docs/power-up-guide',
+          label: 'Power-Up Guide',
           position: 'right',
         },
       ],
@@ -84,17 +83,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Power-Up Guide',
+              label: 'Docs',
               to: '/docs/power-up-guide',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Publish The Docs',
-              to: '/docs/deployment',
             },
           ],
         },

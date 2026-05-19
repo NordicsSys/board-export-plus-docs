@@ -3,12 +3,12 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -24,8 +24,8 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/deployment">
-            Publish safely
+            to="/docs/power-up-guide">
+            Explore features
           </Link>
         </div>
       </div>
@@ -34,7 +34,7 @@ function HomepageHeader() {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title="Board Export+ Documentation"
@@ -51,10 +51,6 @@ export default function Home(): ReactNode {
               <div className="col col--4">
                 <h2>Delivery Setup</h2>
                 <p>Understand real email delivery, webhook verification, scheduled export payloads, and troubleshooting.</p>
-              </div>
-              <div className="col col--4">
-                <h2>Safe Publishing</h2>
-                <p>Publish documentation without exposing private product code, environment files, or credentials.</p>
               </div>
             </div>
           </div>
