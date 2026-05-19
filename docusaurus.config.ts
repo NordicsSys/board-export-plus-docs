@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Board Export+ Docs',
   tagline: 'Export Trello boards, reports, schedules, email delivery, and webhooks.',
-  favicon: 'img/board-export-logo.png',
+  favicon: 'img/favicon-32x32.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
