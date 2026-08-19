@@ -11,7 +11,7 @@ const config: Config = {
     v4: true,
   },
 
-  url: process.env.DOCS_SITE_URL ?? 'https://board-export.it-pal.net',
+  url: process.env.DOCS_SITE_URL ?? 'https://board-export-docs.nikaj.dev',
   baseUrl: '/',
 
   organizationName: 'NordicsSys',

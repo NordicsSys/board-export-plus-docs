@@ -1,6 +1,6 @@
 # Board Export+ Docs
 
-Public user-facing documentation for [Board Export+](https://board-export.it-pal.net), built with [Docusaurus](https://docusaurus.io/).
+Public user-facing documentation for [Board Export+](https://board-export-docs.nikaj.dev), built with [Docusaurus](https://docusaurus.io/).
 
 This repository is documentation-only. It is safe to publish separately from the private product repository.
 
@@ -29,14 +29,14 @@ pnpm serve
 
 Pushes to `main` run `.github/workflows/deploy.yml`, which builds the site and publishes it to **GitHub Pages**.
 
-Live site: **https://board-export.it-pal.net**
+Live site: **https://board-export-docs.nikaj.dev**
 
 ### One-time GitHub setup
 
 1. Open **Settings → Pages** in this repository.
 2. Set **Build and deployment → Source** to **GitHub Actions**.
-3. Ensure the custom domain `board-export.it-pal.net` is configured in Pages settings (the repo includes `static/CNAME`).
-4. Point DNS for `board-export.it-pal.net` to GitHub Pages (A/AAAA records or CNAME to `NordicsSys.github.io`).
+3. Ensure the custom domain `board-export-docs.nikaj.dev` is configured in Pages settings (the repo includes `static/CNAME`).
+4. Point DNS for `board-export-docs.nikaj.dev` to GitHub Pages (A/AAAA records or CNAME to `NordicsSys.github.io`).
 
 After that, every push to `main` redeploys automatically.
 
