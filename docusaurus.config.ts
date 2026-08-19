@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Board Export+ Docs',
   tagline: 'Client-ready Trello exports — guides, schedules, and delivery.',
-  favicon: 'img/favicon-32x32.png',
+  favicon: 'img/favicon.ico',
 
   future: {
     v4: true,
@@ -51,7 +51,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/board-export-logo.png',
+    image: 'img/logo.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -59,7 +59,7 @@ const config: Config = {
       title: 'Board Export+',
       logo: {
         alt: 'Board Export+',
-        src: 'img/board-export-logo.png',
+        src: 'img/logo.png',
       },
       items: [
         {
