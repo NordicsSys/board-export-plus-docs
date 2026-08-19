@@ -1,10 +1,7 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Board Export+ docs theme — Trello-blue accents, readable guide images.
  */
 
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #0c66e4;
   --ifm-color-primary-dark: #0b5ccc;
@@ -15,9 +12,9 @@
   --ifm-color-primary-lightest: #5799f5;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-navbar-height: 3.75rem;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #579dff;
   --ifm-color-primary-dark: #3488ff;
@@ -27,4 +24,53 @@
   --ifm-color-primary-lighter: #8bc0ff;
   --ifm-color-primary-lightest: #bedcff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__logo img {
+  border-radius: 6px;
+}
+
+/* Annotated guide screenshots */
+.theme-doc-markdown img[src*='/img/guide/'] {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  margin: 1rem 0 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* Product screenshots used in documentation and long-form guides. */
+.theme-blog-post-page img[src*='/img/guide/'],
+.theme-blog-post-page img[src*='/img/blog/'] {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  margin: 1rem auto 1.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.theme-blog-post-page table {
+  display: table;
+  width: 100%;
+}
+
+.theme-doc-markdown table {
+  display: table;
+  width: 100%;
+}
+
+.theme-doc-markdown iframe {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 280px;
+  margin: 1rem 0 0.5rem;
+  border: 0;
+  border-radius: 12px;
 }

@@ -1,0 +1,266 @@
+---
+slug: export-trello-board-excel-csv-pdf-json
+title: How to Export Trello Boards to Excel, CSV, PDF & JSON (2026 Complete Guide)
+description: Learn how to export a Trello board to Excel, CSV, PDF, or JSON. Compare formats and follow a step-by-step visual guide with Board Export+.
+authors: [board_export_team]
+tags: [Trello, export, Excel, CSV, PDF, JSON, backup]
+keywords:
+  - export Trello board
+  - Trello export to Excel
+  - Trello export CSV
+  - Trello export PDF
+  - Trello export JSON
+  - download Trello board
+  - back up Trello board
+image: /img/guide/export-setup.png
+hide_table_of_contents: false
+---
+
+import Head from '@docusaurus/Head';
+
+<Head>
+  <script type="application/ld+json">{JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Can I export a Trello board to Excel?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Export an XLSX file with Board Export+, or export CSV and open it in Microsoft Excel. Native Trello CSV export is available for boards in Premium Workspaces.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I export a Trello board to PDF?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Board Export+ creates formatted PDF reports from a Trello board, list, or card. Trello also offers limited browser printing, but it is not a configurable data export.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Trello export comments?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Native Trello board JSON includes the 1,000 most recent board actions, including comments. Native CSV does not include comments. Board Export+ can include comments when that field is selected.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Which Trello export format is best for a backup?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'JSON is generally the best choice for a structured data archive. Choose ZIP when you also need attachment files, and use CSV or XLSX when people need to inspect the data in a spreadsheet.'
+        }
+      }
+    ]
+  })}</script>
+</Head>
+
+Exporting a Trello board sounds simple until you need the file to do a specific job. A spreadsheet for analysis, a polished PDF for a client, and a JSON archive for developers all need the same board data presented in very different ways.
+
+This guide explains **how to export a Trello board to Excel, CSV, PDF, and JSON in 2026**, which format to choose, what Trello's native export can and cannot do, and how to create a more configurable export with Board Export+.
+
+{/* truncate */}
+
+## Quick answer: how do you export a Trello board?
+
+You have two practical options:
+
+1. **Use Trello's native export.** Open the board menu, choose **Print, Export, and Share**, and select an available option. All board members can export raw JSON. CSV export is available for boards in Premium Workspaces.
+2. **Use Board Export+.** Open the Power-Up from your board, list, or card; choose the scope, fields, filters, and format; preview the result; then export it as CSV, XLSX, JSON, PDF, PNG, DOCX, or ZIP.
+
+If you only need raw board data, Trello's JSON export may be enough. If you need Excel, a presentation-ready PDF, selected fields, filtering, reusable presets, or scheduled delivery, a dedicated Power-Up is the more direct route.
+
+## Why people export Trello boards
+
+Trello is excellent for active work. An exported file becomes useful when the board must leave Trello or be preserved at a point in time.
+
+Common reasons include:
+
+- **Reporting:** Turn live cards into a weekly status report, project summary, or management spreadsheet.
+- **Analysis:** Sort, filter, calculate, chart, or combine Trello data in Excel, Google Sheets, or a BI tool.
+- **Client and stakeholder sharing:** Send a clean PDF without inviting every reader to the working board.
+- **Backup and audit:** Keep a dated snapshot for governance, compliance, handover, or disaster recovery.
+- **Migration and integration:** Give structured JSON to a developer, script, database, or another project-management system.
+- **Offline access:** Review project data when Trello is unavailable or internet access is limited.
+
+The intended use should decide the format. A PDF is easy to read but poor for calculations. JSON preserves structure but is uncomfortable for most nontechnical readers.
+
+## Excel vs CSV vs PDF vs JSON: which export format should you use?
+
+| Format | Best for | Main advantage | Main limitation |
+| --- | --- | --- | --- |
+| **XLSX (Excel)** | Analysis, handoffs, business reporting | Opens as a native Excel workbook and supports a familiar tabular workflow | Not ideal for deeply nested data such as many comments per card |
+| **CSV** | Simple spreadsheets, imports, automation | Lightweight and widely compatible | No workbook styling, multiple sheets, or rich nested structure |
+| **PDF** | Clients, executives, records, printing | Consistent, polished, and easy to share | Difficult to edit, calculate, or import elsewhere |
+| **JSON** | Backups, development, migration, APIs | Preserves structured and nested data | Hard for nontechnical readers to inspect |
+
+### Choose Excel (XLSX) when people will work with the data
+
+Use XLSX when the next step is filtering, calculating, creating a pivot table, or sharing a workbook with business users. It is the clearest answer to “How do I export Trello to Excel?” because no conversion step is required.
+
+### Choose CSV for maximum compatibility
+
+CSV is ideal for database imports, Google Sheets, lightweight automation, and applications that accept rows and columns. Excel opens CSV files too, but CSV is a plain-text interchange format—not a fully featured Excel workbook.
+
+### Choose PDF when the result should be read, not edited
+
+PDF works well for client updates, approvals, meeting packs, and permanent records. A purpose-built PDF export can present lists, cards, dates, labels, members, and branding in a stable layout.
+
+Trello itself offers [limited printing support for boards and cards](https://support.atlassian.com/trello/docs/printing-in-trello/). Printing a board to PDF through the browser can be useful for a quick visual copy, but it is different from generating a configurable report.
+
+### Choose JSON for the most complete structured data
+
+JSON is designed for machines and developers. It can represent relationships and nested items—such as cards, checklists, members, and actions—more naturally than a flat spreadsheet.
+
+Atlassian notes that every board member can export a board as JSON. Its native per-board JSON contains the **1,000 most recent board actions**, which includes comments. For all comments and Workspace-wide data, Atlassian directs Premium users to the Workspace export. See Atlassian's current [Trello export documentation](https://support.atlassian.com/trello/docs/exporting-data-from-trello/) for the official limits.
+
+## What Trello's native export includes in 2026
+
+Trello's built-in export remains useful, but availability and contents vary:
+
+- Any board member can export a board as raw JSON.
+- CSV export is available for boards that belong to a Premium Workspace.
+- Native CSV omits comments and normally includes only non-archived cards.
+- Premium Workspace admins can create a Workspace export containing CSV and JSON for all boards.
+- Workspace exports can optionally include raw attachments in a ZIP download.
+- Trello does not currently support recreating a board by importing its exported JSON or CSV.
+
+These points are based on Atlassian's [Export data from Trello](https://support.atlassian.com/trello/docs/exporting-data-from-trello/) support page, checked for this 2026 guide.
+
+## How to export a Trello board with Board Export+
+
+Board Export+ lets you decide what to export before choosing how it should look. The screenshots below show the real Power-Up interface.
+
+### Step 1: Open Board Export+ and select the export scope
+
+Open Board Export+ from a **board, list, or card**. On the Start screen, confirm the source and give the file a recognizable name.
+
+![Board Export+ Start screen for selecting lists, fields, filters, and an export format](/img/guide/export-setup.png)
+
+Choose only the lists you need. A focused export is easier to read and produces less cleanup work than exporting an entire board by default.
+
+### Step 2: Choose and order the fields
+
+Open **Fields** and select the columns or details that belong in the output. Depending on your workflow, that can include board and list names, card titles and descriptions, labels, members, start and due dates, checklist progress, custom fields, links, attachments metadata, comments, and activity.
+
+![Board Export+ Fields screen for selecting and reordering Trello export columns](/img/guide/fields.png)
+
+Drag fields into the order your readers expect. For a concise status report, start with list, card, member, due date, and status. For a backup or audit, include the richer detail.
+
+### Step 3: Add filters
+
+Return to **Start** and narrow the cards if needed. For example, export only work assigned to a member, cards carrying a specific label, or items in the lists relevant to the report.
+
+Filtering before export prevents recipients from working around irrelevant rows later.
+
+### Step 4: Choose XLSX, CSV, PDF, or JSON
+
+Select the format in the footer:
+
+- Choose **XLSX** for a ready-to-use Excel workbook.
+- Choose **CSV** for a portable, flat table.
+- Choose **PDF** for a polished report.
+- Choose **JSON** for structured data, backup, or development.
+
+Board Export+ also supports PNG, DOCX, and ZIP for workflows that need an image, editable document, or packaged attachments.
+
+### Step 5: Preview before exporting
+
+Select **Preview** to verify the selected cards and fields. Check names, dates, list order, filters, and any report branding before generating the final file.
+
+![Preview of Trello board data before export in Board Export+](/img/blog/preview.png)
+
+Then select **Export**. Smaller files download directly. Larger jobs can run in the background and appear in **History** when ready.
+
+### Step 6: Save the setup as a preset
+
+If this is a report you will run again, save the configuration as a preset. Presets reduce errors because the scope, field order, and format do not have to be rebuilt each time.
+
+![Board Export+ presets for reusable Trello export configurations](/img/guide/presets.png)
+
+### Step 7: Schedule recurring exports when needed
+
+For weekly reports or regular backups, create a schedule, select the local run time, choose retention, and configure a verified email recipient or webhook endpoint.
+
+![Scheduling recurring Trello board exports in Board Export+](/img/guide/schedule.png)
+
+Scheduled delivery is useful when the real goal is not “export this board once,” but “make sure this report arrives every Friday without somebody remembering to run it.”
+
+## Practical export recipes
+
+### Weekly project status in Excel
+
+Select active lists, then include list, card, member, due date, completion state, labels, and card URL. Export as XLSX. This gives a project lead a workable spreadsheet without exposing every detail on the board.
+
+### Client-ready progress report in PDF
+
+Filter the board to client-visible work, include concise card descriptions and dates, add workspace branding, preview, then export as PDF. Review the file before sending because card descriptions may contain internal notes.
+
+### Structured Trello backup in JSON
+
+Include the broadest appropriate scope and fields, export as JSON, add a date to the filename, and store it according to your organization's retention policy. If actual attachment files are essential, use a ZIP-capable workflow rather than relying only on attachment URLs.
+
+### Lightweight import file in CSV
+
+Choose only fields supported by the destination system, place its required identifiers first, and export as CSV. Open the file once to verify delimiters, dates, and characters before importing it elsewhere.
+
+## Export security and data quality checklist
+
+An export can contain more information than its recipient needs. Before sharing it:
+
+- Remove unnecessary member, comment, activity, and attachment fields.
+- Check whether archived or filtered cards should be included.
+- Confirm dates and timezone-dependent values.
+- Treat download and share links as sensitive.
+- Store backups according to your organization's retention rules.
+- Open the final file in its target application before distributing it.
+
+For CSV files, also remember that values beginning with spreadsheet formula characters can be dangerous if an exporter does not neutralize them. Board Export+ applies spreadsheet-safety handling to generated tabular output.
+
+## Frequently asked questions
+
+### Can I export a Trello board to Excel?
+
+Yes. Export an XLSX file with Board Export+, or export CSV and open it in Microsoft Excel. Native Trello CSV export is available for boards in Premium Workspaces.
+
+### Can I export a Trello board to PDF?
+
+Yes. Board Export+ creates formatted PDF reports from a Trello board, list, or card. Trello also offers limited browser printing, but that is not the same as a configurable data export.
+
+### Can I export Trello to CSV for free?
+
+Board Export+ supports manual CSV and JSON exports on its Free plan. Trello's native per-board CSV option requires the board to belong to a Premium Workspace; raw JSON is available to all board members.
+
+### Does Trello export comments?
+
+Native Trello board JSON includes the 1,000 most recent board actions, including comments. Native CSV does not include comments. Board Export+ can include comments when that field is selected.
+
+### Can I export archived Trello cards?
+
+Atlassian says native CSV normally contains only unarchived cards. Its documented workaround is to append `.csv` to the board URL to download both open and archived cards. With Board Export+, the export contents depend on the scope and filters you select.
+
+### Can I import a Trello JSON or CSV export back into Trello?
+
+Not as a native board restore. Atlassian states that its JSON and CSV exports cannot currently be imported to recreate a Trello board. Treat an export as a report or data archive unless you have a separate migration process.
+
+### Which Trello export format is best for a backup?
+
+JSON is generally the best choice for a structured data archive. Choose ZIP when you also need attachment files, and use CSV or XLSX when people need to inspect the data in a spreadsheet.
+
+### How often should I export a Trello board?
+
+Match the schedule to how quickly the board changes and how costly lost history would be. A weekly export is often enough for reporting; a business-critical operational board may justify daily exports.
+
+## Create the export you actually need
+
+Native Trello export is a good starting point for raw JSON or Premium CSV. Board Export+ is built for the next step: selecting the exact data, choosing the right format, previewing the result, reusing presets, and automating delivery.
+
+**Ready to turn your Trello board into Excel, CSV, PDF, or JSON?**
+
+[Open the Board Export+ visual guide →](/docs/power-up-guide)
+
+You can start with manual CSV and JSON exports, then use the Pro trial when you need XLSX, PDF, reusable reporting, schedules, email delivery, or webhooks.

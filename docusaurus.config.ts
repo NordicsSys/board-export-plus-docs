@@ -1,35 +1,24 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: 'Board Export+ Docs',
-  tagline: 'Export Trello boards, reports, schedules, email delivery, and webhooks.',
+  tagline: 'Client-ready Trello exports — guides, schedules, and delivery.',
   favicon: 'img/favicon-32x32.png',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: process.env.DOCS_SITE_URL ?? 'https://board-export.it-pal.net',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'NordicsSys',
   projectName: 'board-export-plus-docs',
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -43,7 +32,17 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
         },
-        blog: false,
+        blog: {
+          routeBasePath: 'blog',
+          showReadingTime: true,
+          blogTitle: 'Board Export+ Blog',
+          blogDescription: 'Practical guides for exporting, reporting on, and backing up Trello boards.',
+          postsPerPage: 10,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            copyright: `Copyright © ${new Date().getFullYear()} Board Export+.`,
+          },
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -57,9 +56,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Board Export+ Docs',
+      title: 'Board Export+',
       logo: {
-        alt: 'Board Export+ Logo',
+        alt: 'Board Export+',
         src: 'img/board-export-logo.png',
       },
       items: [
@@ -67,11 +66,16 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'Guide',
         },
         {
-          to: '/docs/power-up-guide',
-          label: 'Power-Up Guide',
+          to: '/blog',
+          label: 'Blog',
+          position: 'left',
+        },
+        {
+          href: 'https://www.youtube.com/watch?v=IQOwqYVIWLk',
+          label: 'Video',
           position: 'right',
         },
       ],
@@ -83,13 +87,26 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Docs',
+              label: 'Power-Up Guide',
               to: '/docs/power-up-guide',
+            },
+            {
+              label: 'Trello export guide',
+              to: '/blog/export-trello-board-excel-csv-pdf-json',
+            },
+          ],
+        },
+        {
+          title: 'Product',
+          items: [
+            {
+              label: 'Video guide',
+              href: 'https://www.youtube.com/watch?v=IQOwqYVIWLk',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Board Export+. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Board Export+.`,
     },
     prism: {
       theme: prismThemes.github,

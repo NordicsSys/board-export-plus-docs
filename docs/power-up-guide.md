@@ -1,230 +1,227 @@
 ---
 sidebar_position: 1
 title: Power-Up Guide
-description: Learn how to use Board Export+ inside Trello.
+description: A short, visual guide to Board Export+ inside Trello.
 ---
 
 # Board Export+ Power-Up Guide
 
-Board Export+ helps Trello users export board or card data into reusable files and scheduled deliveries. This guide explains the Power-Up screens, settings, and common workflows.
+Export Trello boards, lists, and cards into client-ready files — then schedule delivery when you need it.
 
-## Quick Export Workflow
+**Formats:** CSV · XLSX · JSON · PDF · PNG · DOCX · ZIP
 
-1. Open Board Export+ from a Trello board or card.
-2. Use **Start** to confirm scope, file name, format, and export readiness.
-3. Use **Fields** to choose columns and their order.
-4. Use **People** and **Labels** when member or label data should be included or filtered.
-5. Use **Presets** to apply a saved or starter configuration.
-6. Use **Preview** to inspect the output shape.
-7. Click the main export button in the footer.
+## Video guide
 
-The sticky footer shows the board name, export readiness, selected card/list/field counts, format, and active filters.
+Watch the full walkthrough first, then use the screenshots below for each screen.
 
-## Visual Walkthrough
+<iframe
+  src="https://www.youtube.com/embed/IQOwqYVIWLk"
+  title="Board Export+ video guide"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+></iframe>
 
-Use these screenshots and the walkthrough GIF to understand the core Board Export+ flow before setting up your own exports.
+[Open on YouTube](https://www.youtube.com/watch?v=IQOwqYVIWLk)
 
-### Quick Video Guide
+## Quick start
 
-![Board Export+ walkthrough](/videos/board-export-plus-walkthrough.gif)
+1. Open **Board Export+** from a board, list, or card.
+2. On **Start**, set filename, lists, fields, and filters.
+3. Pick a format in the footer.
+4. Click **Preview**, then **Export**.
 
-### Product Screenshots
+Most exports finish quickly and download right away. Larger exports are **queued** in the background — check **History** if the download does not start within a few seconds.
 
-#### Export Setup
+---
 
-![Board Export+ export setup](/screenshots/01-start-export-setup.png)
+## Start — set up the export
 
-Choose the export scope, format, filters, and confirm readiness before downloading.
+Name the file, choose lists and fields, add filters, then export.
 
-#### Field Selection
+![Set up exports in minutes](/img/guide/export-setup.png)
 
-![Choose Trello export fields](/screenshots/02-fields-column-selection.png)
+| Step | What to do |
+| --- | --- |
+| **Filename** | Name the export so you can find it later. |
+| **Preset** | Start from a saved layout, or keep a custom setup. |
+| **Lists** | Include only the lists you need. |
+| **Fields** | Pick the data columns for this run. |
+| **Filters** | Narrow the export to matching cards. |
+| **Format** | Choose CSV, XLSX, JSON, PDF, PNG, DOCX, or ZIP. |
+| **Preview / Export** | Check the output, then download (or queue for History). |
 
-Select exactly which Trello fields appear in the export and control the column order.
+The footer always shows readiness, card/list counts, format, and active filters.
 
-#### Export Preview
+If you enable **comments** or **activity** fields, Board Export+ loads that data from Trello when the export runs (not during the initial preview).
 
-![Preview Trello export](/screenshots/03-export-preview.png)
+---
 
-Preview the export before downloading so reports are clean and client-ready.
+## Fields — choose columns
 
-#### Scheduled Exports
+Pick exactly what appears in the file, reorder columns, and save the layout.
 
-![Schedule recurring Trello exports](/screenshots/04-scheduled-exports.png)
+![Choose your export fields](/img/guide/fields.png)
 
-Schedule recurring exports with timezone-aware run times, retained downloads, and delivery options.
+| Control | What it does |
+| --- | --- |
+| **Drag handles** | Reorder columns. |
+| **X** | Remove a column. |
+| **Add field** | Include another field. |
+| **Save as preset** | Reuse this field set later. |
 
-#### Export History
+Use fewer fields for client reports. Use more fields for backups and audits.
 
-![Recent Trello export history](/screenshots/05-export-history.png)
+---
 
-Access recent exports, copy client share links, and reuse previous settings.
+## Presets — reuse layouts
 
-#### Presets
+Apply a starter layout, or save your current setup for one-click reuse.
 
-![Board Export+ presets](/screenshots/06-presets.png)
+![Start from ready presets](/img/guide/presets.png)
 
-Apply starter presets or reuse saved configurations for consistent reporting.
+| Area | What it does |
+| --- | --- |
+| **Your presets** | Name and save the current setup. |
+| **Starter presets** | Ready-made layouts (spreadsheet, backup, weekly status, and more). |
+| **Apply preset** | Load that layout into Start and Fields. |
 
-## Start
+After applying a preset, review **Start** and **Fields** — especially if you change format.
 
-The Start tab is the main launch point for a one-time export.
+Your plan limits how many saved presets you can keep (shown as `0/24` style counters).
 
-- **Export check** shows whether the current setup is ready, needs review, or is blocked.
-- **Filename** shows the generated file name before export.
-- **Scope and filters** control which cards are included.
-- **Format** controls the file type, such as CSV, XLSX, JSON, PDF, PNG, DOCX, or ZIP.
+---
 
-If export is blocked, follow the setup message first. Common blockers are no selected cards or no selected tabular columns for formats that require fields.
+## Schedule — automate delivery
 
-## Fields
+Set cadence, local time, retention, and delivery targets.
 
-The Fields tab controls tabular columns and field order.
+![Schedule exports automatically](/img/guide/schedule.png)
 
-- Enable fields such as board, list, card, description, labels, members, dates, custom fields, URLs, comments, activity, and attachments.
-- Reorder fields to control column order in CSV/XLSX/JSON-style exports.
-- Some fields depend on related options. For example, label output depends on label options, and member output depends on people options.
+| Step | What to do |
+| --- | --- |
+| **When to run** | Name the schedule, pick daily/weekly, set local time. |
+| **Next run** | Confirm the timezone-aware next run time. |
+| **Retention & sharing** | Keep downloads for N days; optionally create a client share link. |
+| **Verify delivery** | Verify email recipients and webhook endpoints before use. |
+| **Save** | Activate the schedule. |
 
-Use a smaller field set for client-ready exports and a broader field set for audits or backups.
+**Email:** add recipient → open verification email → paste token → select verified recipient → save.
 
-## People
+**Webhook:** paste URL → complete challenge verification → select endpoint → enable webhook delivery → save.
 
-The People tab controls member data.
+Schedules, email, and webhooks require **Pro** (or an active trial).
 
-- **People columns** selects which people-related fields are included in the export.
-- **Included people** shows people currently in scope.
-- Removing a person from scope filters matching cards from the export run.
+---
 
-Blue “Included” states mean the option is selected for the export. Green is reserved for successful or verified states elsewhere.
+## History — past exports
 
-## Labels
+Track completed runs, download files, and reuse past settings. Queued interactive exports also appear here while they run.
 
-The Labels tab controls label data.
+![See every export at a glance](/img/guide/history.png)
 
-- **Label output options** controls whether label names, colors, and grouping flags are included.
-- **Labels in scope** shows labels currently available for this run.
-- Removing a label from scope filters matching cards from the export run.
+| Area | What it does |
+| --- | --- |
+| **Quick stats** | Totals for exports, completed runs, scheduled jobs, and share links. |
+| **Format & status** | See file type and job status at a glance. |
+| **Download** | Get the file while it is still retained. |
+| **Reuse settings** | Reload that export’s setup into the modal. |
 
-Use label filtering when you only want to export cards tied to a client, status, department, or workflow label.
+Status values include **Queued** and **Processing** for interactive exports still running. If an export is queued and the download does not start within about 30 seconds, Board Export+ shows a message to check **History** when it is ready.
 
-## Presets
+For scheduled jobs, status can also show delivery progress, such as **Delivery queued**, **Delivering**, **Delivered**, or **Delivery failed**.
 
-The Presets tab provides reusable export setups.
+---
 
-- **Starter presets** apply common layouts for board snapshots, client reports, and detailed card exports.
-- Saved templates can be reused to keep team exports consistent.
-- Duplicating a preset is useful when you want a variant without changing the original setup.
+## Advanced — branding & defaults
 
-Always review Start and Fields after applying a preset, especially when switching formats.
+Set workspace branding and fallback defaults used when Trello does not pass context.
 
-## Schedule
+![Set export defaults faster](/img/guide/advanced.png)
 
-The Schedule tab creates recurring exports using the current export setup.
+| Setting | What it does |
+| --- | --- |
+| **Company / workspace name** | Brand name on PDF, PNG, and DOCX reports. |
+| **Tagline** | Optional subtitle on reports. |
+| **Logo URL** | Optional logo on reports. |
+| **Default format** | Preferred format for new exports. |
+| **Default scope** | Board / list / card when Trello does not pass one. |
 
-Key schedule settings:
+These branding values are stored locally for the modal. Power-Up preferences live in Settings.
 
-- **Name** identifies the schedule in the history and management views.
-- **Cadence** controls daily or weekly recurrence.
-- **Time and time zone** control when the schedule should run.
-- **Delivery targets** verify email recipients and webhook endpoints.
-- **Delivery methods** choose retained downloads, email delivery, webhook delivery, and public share options when available.
+---
 
-If a scheduled export does not arrive, confirm that the schedule is active, the time zone is correct, and at least one verified delivery target is selected.
+## Settings & billing
 
-## Email Delivery
+Manage connection, preferences, and your plan from Power-Up settings.
 
-Email delivery sends scheduled export notifications to verified recipients. It is intended for team members, clients, or other recipients who need to know when an export is ready.
+![Manage billing with clarity](/img/guide/billing.png)
 
-Requirements:
+### Connection & preferences
 
-- The recipient email address is verified from the Schedule tab.
-- The schedule is active and includes Email as a delivery method.
-- Download retention or public share links are enabled when recipients need a download URL in the notification.
+| Area | What it does |
+| --- | --- |
+| **Account** | See connection status; reconnect or disconnect. |
+| **Export defaults** | Preferred format, scope, and filename pattern. |
+| **Dates & time** | Timezone and date/time display style. |
+| **Export history** | Save recent exports and set retention days. |
 
-User workflow:
+### Plans
 
-1. Add an email recipient in the Schedule tab.
-2. Open the verification email.
-3. Paste the token into the verification field.
-4. Select the verified recipient for delivery.
-5. Save the schedule.
+| Plan | Price | Includes |
+| --- | --- | --- |
+| **Free** | $0 | Manual **JSON** and **CSV** exports |
+| **Monthly** | $9/mo | Workspace Pro, 3 active boards included |
+| **Yearly** | $89/yr | Same as Pro, best recurring value |
+| **Early Bird Lifetime Phase 1** | $99 once | First 25 workspaces, 3 active boards included |
+| **Early Bird Lifetime Phase 2** | $149 once | Next 50 workspaces, 3 active boards included |
+| **Early Bird Lifetime Phase 3** | $199 once | Next 100 workspaces, 3 active boards included |
+| **Extra active board** | $3/board/mo | Add-on for Workspace Pro |
+| **Lifetime** | $199 once | Same as Pro — pay once |
 
-Recipients receive an export-ready notification with schedule details, file metadata, and a download/share link when the schedule is configured to retain or share the generated file.
+Pro also raises limits for saved presets, history items, and retention.
 
-## Webhook Delivery
+- Start with a **14-day Pro trial** on the member plan (legacy default).
+- Use **Manage billing** for payment methods, invoices, and subscription changes.
 
-Webhook delivery posts export metadata to a verified endpoint owned by your team, client, automation platform, or integration service. It is designed for production systems that want to react when a scheduled export finishes.
+When your workspace administrator has enabled **workspace billing**, Pro is purchased for the Trello workspace that owns the current board. The settings screen shows **Billing scope: Workspace** and only workspace admins or billing managers can upgrade or open the billing portal. Access still applies to all members on licensed boards in that workspace once payment is confirmed.
 
-Before a webhook can receive scheduled export notifications, it must be verified from the Schedule tab. Use a webhook URL from the system, automation tool, or integration service that should receive the export notification.
+---
 
-Verification workflow:
+## Formats at a glance
 
-1. Paste the receiver URL into **Verify webhook** in the Schedule tab.
-2. Board Export+ sends a challenge request to the receiver.
-3. The receiver echoes the challenge token.
-4. After verification, select the endpoint under **Webhook URL**.
-5. Enable Webhook delivery and save the schedule.
+| Format | Best for |
+| --- | --- |
+| **CSV / XLSX** | Spreadsheets and analysis |
+| **JSON** | Backups, migrations, integrations |
+| **PDF / PNG / DOCX** | Client-ready report layouts |
+| **ZIP** | Attachments plus a manifest |
 
-If verification fails, confirm that the webhook URL is correct and that the receiving service is ready to accept Board Export+ verification requests.
+Not every option applies to every format. Branding matters most for reports. Field order matters most for tabular files.
 
-## History
-
-The History tab shows recent export jobs when history saving is enabled.
-
-- Completed jobs can be downloaded while retained artifacts are available.
-- Failed jobs show status so you can adjust settings and rerun.
-- History availability depends on your saved settings and how long generated exports remain available.
-
-## More And Advanced Settings
-
-The More menu contains lower-frequency sections such as Schedule, History, Advanced, and Help & docs.
-
-Advanced settings include optional export behavior, branding defaults, and other controls that affect the current export without changing Trello itself.
-
-## Power-Up Settings
-
-Power-Up settings manage long-lived preferences.
-
-- **Account & connection** reconnects or disconnects Trello REST access.
-- **Defaults** control preferred format, filename pattern, and remembered setup behavior.
-- **Dates & time zone** controls how dates are interpreted and displayed.
-- **History** controls whether export history is saved and how long it remains visible.
-- **Reset preferences** clears saved preferences, branding, defaults, and remembered layouts.
-
-Use settings when you want to change defaults for future exports. Use the export tabs when you want to change only the current run.
-
-## Export Formats
-
-- **CSV/XLSX** are best for spreadsheet workflows.
-- **JSON** is best for integration, automation, or backup-style output.
-- **PDF/PNG/DOCX** are best for presentation-style reports.
-- **ZIP** is best when exporting Trello attachment files and a manifest.
-
-Not every option affects every format. For example, presentation branding matters most for report formats, while field order matters most for tabular formats.
+---
 
 ## Troubleshooting
 
-### Export Is Blocked
+**Export is blocked**  
+Check the Start readiness message. Usually you need cards/lists selected, or tabular fields for CSV/XLSX/JSON.
 
-Check the Start tab export readiness message. Most blockers require selecting cards/lists or adding fields.
+**Export queued but no download**  
+Open **History** and wait for status to change from **Queued** or **Processing** to completed, then download from there.
 
-### Schedule Did Not Run
+**Schedule did not run**  
+Confirm the schedule is active, the timezone/time are correct, and at least one verified delivery method is selected.
 
-Confirm:
+**Email verification missing**  
+Check spelling and spam, then resend verification.
 
-- The schedule is active.
-- The selected time and time zone are correct.
-- At least one delivery method is enabled.
-- The selected email recipient or webhook endpoint is verified.
+**Webhook verified but nothing arrives**  
+Confirm webhook delivery is enabled on the schedule and the verified endpoint is selected.
 
-### Webhook Verified But No Delivery Appears
+**Format requires Pro**  
+PDF, PNG, XLSX, DOCX, ZIP, schedules, email, and webhooks need Pro or an active trial. Upgrade from Settings.
 
-Confirm that Webhook delivery is enabled for the schedule and that the verified webhook endpoint is selected.
+---
 
-### Email Verification Does Not Arrive
+## Privacy
 
-Check the recipient spelling and spam folder, then send a new verification email if needed.
-
-## Privacy And Stored Data
-
-Board Export+ may store Trello access tokens, export settings, schedules, template metadata, export job history, retained artifacts, and data included in generated exports. Treat exported files and public share links as sensitive if they include client, member, card, comment, or attachment information.
+Board Export+ may store access tokens, export settings, schedules, templates, job history, and retained files. Treat downloads and share links as sensitive when they include client or member data.
